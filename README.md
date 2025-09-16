@@ -1,10 +1,9 @@
-# Flipflop-using-Blocking-and-Non-blocking-Assignments
-Exp 3 -Write and simulate D, SR, JK, T Flipflops using Blocking and Non blocking Assignments
-   Aim: To design and simulate D, SR, JK, T Flipflops using Blocking and Non blocking Assignments in Verilog HDL and verify its functionality through a testbench using the Vivado 2023.1 simulation environment.
+## Exp 3 -Write and simulate D, SR, JK, T Flipflops using Blocking and Non blocking Assignments
+##   Aim: To design and simulate D, SR, JK, T Flipflops using Blocking and Non blocking Assignments in Verilog HDL and verify its functionality through a testbench using the Vivado 2023.1 simulation environment.
    
-  Apparatus Required:
+##  Apparatus Required:
   Vivado 2023.1
-Procedure:
+## Procedure:
 
 Launch Vivado Open Vivado 2023.1 by double-clicking the Vivado icon or searching for it in the Start menu. 
 Create a New Project Click on "Create Project" from the Vivado Quick Start window. In the New Project Wizard: Project Name: Enter a name for the project (e.g., Mux4_to_1). 
@@ -28,23 +27,83 @@ Take screenshots of the waveform window and include them in your lab report to d
 You can include the timing diagram from the simulation window showing the correct functionality of the Seven Segment across different select inputs and data inputs. 
 Close the Simulation Once done, by going to Simulation → "Close Simulation
 
-Input/Output Signal Diagram:
+## Input/Output Signal Diagram:
 
-D FF
-
-SR FF
-
-JK FF
-
-T FF
+### D FF:
+<img width="365" height="270" alt="image" src="https://github.com/user-attachments/assets/1280773a-80fd-406c-b473-41b032fb568e" />
 
 
-RTL Code:
+### SR FF:
+<img width="370" height="226" alt="image" src="https://github.com/user-attachments/assets/e59a7b61-fd99-43f7-98e3-03818284bffd" />
 
-TestBench:
 
-Output waveform:
+### JK FF:
+<img width="412" height="267" alt="image" src="https://github.com/user-attachments/assets/571f9fca-eb08-4424-bf7c-2c85e131a3f1" />
 
-Conclusion:
+
+### T FF:
+<img width="410" height="257" alt="image" src="https://github.com/user-attachments/assets/995f03f8-efca-4801-b1e4-5d0cb720e2ad" />
+
+
+## RTL Code:
+
+### D Flip Flop:
+```
+
+```
+### D Flip Flop:
+```
+
+```
+### D Flip Flop:
+```
+
+```
+### D Flip Flop:
+```
+
+```
+
+
+## TestBench:
+
+### D Flip Flop:
+```
+
+```
+### D Flip Flop:
+```
+
+```
+### D Flip Flop:
+```
+
+```
+### D Flip Flop:
+```
+
+```
+
+
+## Output waveform:
+
+### D FF BLOCK:
+<img width="1919" height="1199" alt="Screenshot 2025-09-16 153446" src="https://github.com/user-attachments/assets/523aadc4-1f35-4e81-b2cf-14bdf07aff27" />
+
+### T FF BLOCK:
+<img width="1919" height="1199" alt="Screenshot 2025-09-16 213315" src="https://github.com/user-attachments/assets/4d95a340-ee3a-4eb4-b0a7-4ee3366043a4" />
+
+### JK FF BLOCK:
+<img width="1917" height="1199" alt="Screenshot 2025-09-16 163127" src="https://github.com/user-attachments/assets/d45c69c5-95dd-4e45-8bec-dc02a1108d32" />
+
+### SR FF BLOCK:
+<img width="1917" height="1199" alt="image" src="https://github.com/user-attachments/assets/6c6593ed-9dfa-4800-949d-d7878bd37e65" />
+
+## Conclusion:
+
+In this experiment, JK, SR, D, and T flip-flops were designed and simulated using Verilog HDL.
+Each flip-flop functioned correctly by performing set, reset, toggle, and hold operations as expected.
+The simulation results confirmed the proper working of flip-flops in sequential circuit design.
+This provided practical insight into designing memory elements using Verilog.
 
 
