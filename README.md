@@ -216,16 +216,16 @@ endmodule
 
 ## Output waveform:
 
-### D FF BLOCK:
+### D Flip Flop:
 <img width="1919" height="1199" alt="Screenshot 2025-09-16 153446" src="https://github.com/user-attachments/assets/523aadc4-1f35-4e81-b2cf-14bdf07aff27" />
 
-### T FF BLOCK:
+### T Flip Flop:
 <img width="1919" height="1199" alt="Screenshot 2025-09-16 213315" src="https://github.com/user-attachments/assets/4d95a340-ee3a-4eb4-b0a7-4ee3366043a4" />
 
-### JK FF BLOCK:
+### JK Flip Flop:
 <img width="1917" height="1199" alt="Screenshot 2025-09-16 163127" src="https://github.com/user-attachments/assets/d45c69c5-95dd-4e45-8bec-dc02a1108d32" />
 
-### SR FF BLOCK:
+### SR Flip Flop:
 <img width="1917" height="1199" alt="image" src="https://github.com/user-attachments/assets/6c6593ed-9dfa-4800-949d-d7878bd37e65" />
 
 ## Conclusion:
