@@ -37,30 +37,80 @@ Input/Output Signal Diagram:
 
 ### JK FF:
 <img width="412" height="267" alt="image" src="https://github.com/user-attachments/assets/571f9fca-eb08-4424-bf7c-2c85e131a3f1" />
-### T FF:
 
-RTL Code:
-
-TestBench:
 ### T FF:
 <img width="410" height="257" alt="image" src="https://github.com/user-attachments/assets/995f03f8-efca-4801-b1e4-5d0cb720e2ad" />
 
-Output waveform:
-
-Conclusion:
 ## RTL Code:
 
 ### D Flip Flop:
 ```
+module dff_block(clk,rst,d,dout);
+    input clk,rst,d;
+    output reg dout;
+    always@ (posedge clk)
+    begin
+        if(rst)
+            dout = 1'b0;
+        else
+            dout = d;
+     end
+endmodule
+
 ```
-### D Flip Flop:
+### T Flip Flop:
 ```
+module tff_block(clk,rst,Tout,T);
+    input clk,rst,T;
+    output reg Tout;
+    always@ (posedge clk)
+     begin
+     if(rst)
+        Tout = 1'b0;
+     else if(T)
+        Tout = ~Tout;
+     else
+        Tout = Tout;
+     end
+endmodule
+
 ```
-### D Flip Flop:
+### JK Flip Flop:
 ```
+module jkff_block(clk,rst,J,K,Q);
+    input clk,rst,J,K;
+    output reg Q;
+    always@(posedge clk)
+      begin
+        case({J,K})
+            2'b00 : Q = Q;
+            2'b01 : Q = 0;
+            2'b10 : Q = 1;
+            2'b11 : Q = ~Q;
+            default : Q = Q;
+         endcase
+     end
+endmodule
+
 ```
-### D Flip Flop:
+### SR Flip Flop:
 ```
+module srff_block(clk,S,R,Q);
+    input clk,S,R;
+    output reg Q;
+    
+    always @(posedge clk) 
+        begin
+            case ({S,R})
+                2'b00: Q = Q;      
+                2'b01: Q = 0;      
+                2'b10: Q = 1;      
+                2'b11: Q = 1'bx;   
+                default: Q = Q;
+            endcase
+        end
+endmodule
+
 ```
 
 
@@ -68,17 +118,101 @@ Conclusion:
 
 ### D Flip Flop:
 ```
-```
-### D Flip Flop:
-```
-```
-### D Flip Flop:
-```
-```
-### D Flip Flop:
-```
-```
+module dff_block_tb;
+    reg clk_t,rst_t,d_t;
+    wire dout_t;
+    dff_block dut(.clk(clk_t),.rst(rst_t),.d(d_t),.dout(dout_t));
+    initial
+      begin
+        clk_t = 1'b0;
+        rst_t = 1'b1;
+     #20
+        rst_t = 1'b0;
+        d_t   = 1'b0;
+     #20
+        d_t = 1'b1;
+     end
+     always 
+        #10 clk_t = ~clk_t;
+endmodule
 
+```
+### T Flip Flop:
+```
+module tff_block_tb;
+    reg clk_t,rst_t,T_t;
+    wire Tout_t;
+    
+    tff_block dut(.clk(clk_t),.rst(rst_t),.T(T_t),.Tout(Tout_t));
+    
+    initial
+     begin
+        clk_t = 1'b0;
+        rst_t = 1'b1;
+     #20
+        rst_t = 1'b0;
+        T_t = 1'b0;
+     #20
+        T_t = 1'b1;
+     end
+     
+     always 
+        #10 clk_t = ~clk_t;
+endmodule
+
+```
+### JK Flip Flop:
+```
+module jkff_block_tb;
+    reg clk_t,rst_t,J_t,K_t;
+    wire Q_t;
+    
+    jkff_block dut(.clk(clk_t),.rst(rst_t),.J(J_t),.K(K_t),.Q(Q_t));
+    
+    initial
+      begin
+        clk_t = 1'b0;
+        rst_t = 1'b1;
+      #20
+        rst_t = 1'b0;
+        J_t = 1'b0;
+        K_t = 1'b0;
+      #20
+        J_t = 1'b0;
+        K_t = 1'b1;
+      #20
+        J_t = 1'b1;
+        K_t = 1'b0;
+      #20
+        J_t = 1'b1;
+        K_t = 1'b1;
+     end
+     
+     always 
+        #10 clk_t = ~clk_t;  
+endmodule
+
+```
+### ST Flip Flop:
+```
+module srff_block_tb;
+  reg clk, S, R;
+  wire Q;
+  srff_block dut(.clk(clk),.S(S),.R(R),.Q(Q));
+  initial begin
+   clk = 0;
+  forever #10 clk = ~clk; 
+  end
+  initial begin
+    S = 0; R = 0;
+    #100 S = 1; R = 0;   
+    #100 S = 0; R = 0;   
+    #100 S = 0; R = 1;   
+    #100 S = 1; R = 1;  
+    #100 S = 0; R = 0;
+ end
+endmodule
+```
 
 ## Output waveform:
 
