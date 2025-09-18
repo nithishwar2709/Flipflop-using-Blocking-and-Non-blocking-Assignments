@@ -256,7 +256,7 @@ module jkff_block_tb;
 endmodule
 
 ```
-### ST Flip Flop:
+### SR Flip Flop:
 ```
 module srff_block_tb;
   reg clk, S, R;
